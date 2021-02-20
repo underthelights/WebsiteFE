@@ -45,7 +45,15 @@ export default new VueRouter({
       name: 'apply-reset-password',
       path: '/apply-reset-password/',
       meta: { title: 'Apply Reset Password' },
+      // component: () => import('@/views/identity/ApplyResetPassword.vue')
       component: ApplyResetPassword
+    },
+    {
+      name: 'apply-reset-id',
+      path: '/apply-reset-id/',
+      meta: { title: 'Apply Reset ID' },
+      component: () => import('@/views/identity/ApplyResetID.vue')
+      // component: ApplyResetID
     },
     {
       name: 'reset-password',
