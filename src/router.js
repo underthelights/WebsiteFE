@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import {
   NotFound, Home, MainHome,CreatePost, EditPost, EditProfile, MyPost, UserDashboard,
-  Login, Register, ResetPassword, About, ApplyResetPassword, ShowPost, ShowProfile
+  Login, Register, ResetPassword, About, ApplyResetPassword, ShowPost, ShowProfile, ApplyResetID
 } from './views'
 
 Vue.use(VueRouter)
@@ -52,8 +52,8 @@ export default new VueRouter({
       name: 'apply-reset-id',
       path: '/apply-reset-id/',
       meta: { title: 'Apply Reset ID' },
-      component: () => import('@/views/identity/ApplyResetID.vue')
-      // component: ApplyResetID
+      // component: () => import('@/views/identity/ApplyResetID.vue')
+      component: ApplyResetID
     },
     {
       name: 'reset-password',
