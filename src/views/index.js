@@ -8,6 +8,7 @@ const Login = () => import(/* webpackChunkName: "identity" */ '@/views/identity/
 const Register = () => import(/* webpackChunkName: "identity" */ '@/views/identity/Register.vue')
 const ResetPassword = () => import(/* webpackChunkName: "identity" */ '@/views/identity/ResetPassword.vue')
 const ApplyResetPassword = () => import(/* webpackChunkName: "identity" */ '@/views/identity/ApplyResetPassword.vue')
+// const ApplyResetID = () => import(/* webpackChunkName: "identity" */ '@/views/identity/ApplyResetID.vue')
 
 
 const CreatePost = () => import(/* webpackChunkName: "post" */ '@/views/post/CreatePost.vue')
