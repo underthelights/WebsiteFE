@@ -8,7 +8,7 @@ const Login = () => import(/* webpackChunkName: "identity" */ '@/views/identity/
 const Register = () => import(/* webpackChunkName: "identity" */ '@/views/identity/Register.vue')
 const ResetPassword = () => import(/* webpackChunkName: "identity" */ '@/views/identity/ResetPassword.vue')
 const ApplyResetPassword = () => import(/* webpackChunkName: "identity" */ '@/views/identity/ApplyResetPassword.vue')
-// const ApplyResetID = () => import(/* webpackChunkName: "identity" */ '@/views/identity/ApplyResetID.vue')
+const ApplyResetID = () => import(/* webpackChunkName: "identity" */ '@/views/identity/ApplyResetID.vue')
 
 
 const CreatePost = () => import(/* webpackChunkName: "post" */ '@/views/post/CreatePost.vue')
@@ -22,5 +22,7 @@ const UserDashboard = () => import(/* webpackChunkName: "user" */ '@/views/user/
 const ShowProfile = () => import(/* webpackChunkName: "user" */ '@/views/user/ShowProfile.vue')
 
 export {
-    NotFound, Home, MainHome,CreatePost, EditPost, EditProfile, MyPost, UserDashboard, ShowProfile, Login, Register, ResetPassword, About, ApplyResetPassword, ShowPost
+    NotFound, Home, MainHome,CreatePost, EditPost, EditProfile, 
+    MyPost, UserDashboard, ShowProfile, Login, Register, 
+    ResetPassword, About, ApplyResetPassword, ApplyResetID, ShowPost
 }
