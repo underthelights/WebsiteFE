@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="clause">
+                
     <!-- <div id="questions" text-align="left" line-helight="100%"> 약관 </div> -->
     <br>
     <div id="clause-list">
@@ -101,7 +101,6 @@
                 <div id="questions"><a href="google.com">커뮤니티 이용 방침</a> 동의 (필수)</div>
             </b-form-checkbox>
         </p>
-    </div>
 </div>
     <b-button variant="success">회원가입</b-button>
     <br><br>
@@ -210,71 +209,5 @@
         text-align: left;
     }
 
-    #schoolholder {
-        padding: 8px;
-        line-height: 24px;
-        border: 1px solid #ededed;
-        color: #292929;
-        font-size: 16px;
-        background-color: #f9f9f9;
-        display: block;
-        box-sizing: border-box;
-        width: 100%;
-        height: 40px;
-        border-radius: 12px;
-        font: 400 14px Arial;
-    }
 
-    #description {
-        display: block;
-        font-size: 12px;
-        letter-spacing: -0.5px;
-        font-family: sans-serif;
-        text-align: left;
-    }
-
-    #emailholder {
-        padding: 8px;
-        line-height: 24px;
-        border: 1px solid #ededed;
-        color: #292929;
-        font-size: 16px;
-        background-color: #f9f9f9;
-        display: block;
-        box-sizing: border-box;
-        width: 100%;
-        height: 40px;
-        border-radius: 12px;
-        font: 400 14px Arial;
-    }
-
-    #sendemail {
-        border: 0;
-        color: #fff;
-        font-size: 16px;
-        font-weight: bold;
-        background-color: #42b983;
-        margin-top: 1px;
-        display: block;
-        box-sizing: border-box;
-        width: 20%;
-        height: 40px;
-        border-radius: 12px;
-        letter-spacing: -0.5px;
-    }
-
-    #signupsubmit {
-        border: 0;
-        color: #fff;
-        font-size: 16px;
-        font-weight: bold;
-        background-color: #42b983;
-        margin-top: 8px;
-        display: block;
-        box-sizing: border-box;
-        width: 100%;
-        height: 40px;
-        border-radius: 12px;
-        letter-spacing: -0.5px;
-    }
 </style>
