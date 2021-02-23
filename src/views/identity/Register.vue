@@ -38,7 +38,7 @@
                                 </label>
                                 <b-form-input v-model="userId" :state="validation" id="feedback-user"></b-form-input>
                                 <b-form-invalid-feedback :state="validationid">
-                                    <strong>4자에서 15자 사이</strong>로 입력해주세요 </b-form-invalid-feedback>
+                                    <strong>5자에서 15자 사이</strong>로 입력해주세요 </b-form-invalid-feedback>
                                 <b-form-valid-feedback :state="validationid">좋아요!</b-form-valid-feedback>
                             </b-form>
                         </div>
@@ -150,10 +150,10 @@
         },
         computed: {
             validationid() {
-                return this.userId.length > 4 && this.userId.length < 15
+                return this.userId.length >= 5 && this.userId.length <= 15
             },
             validation() {
-                return this.userId.length > 5
+                return this.userId.length >= 5
             }
         }
     }
