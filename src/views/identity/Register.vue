@@ -63,21 +63,6 @@
                         </div>
                     </div>
                     <br>
-                    <!-- <div id="pw" line-height="11.6em">
-                        <b-form @submit.stop.prevent align="left">
-                            <div id="clause"><label for="feedback-user"><strong>비밀번호</strong>를 입력해주세요</label></div>
-                            <b-form-input v-model="userId_pw" :state="validationpw" id="feedback-user"></b-form-input>
-                            <b-form-invalid-feedback :state="validationpw">비밀번호는 <strong>5글자 이상</strong>으로 설정해주셔야 합니다</b-form-invalid-feedback>
-                            <b-form-valid-feedback :state="validationpw">좋아요!</b-form-valid-feedback>
-                        </b-form>
-                        <br>
-                        <b-form @submit.stop.prevent align="left">
-                            <div id="clause"><label for="feedback-user"><strong>비밀번호</strong>를 다시 입력해주세요</label></div>
-                            <b-form-input v-model="userId_repw" :state="validationrepw" id="feedback-user"></b-form-input>
-                            <b-form-invalid-feedback :state="validationrepw">동일한 비밀번호가 아닙니다</b-form-invalid-feedback>
-                            <b-form-valid-feedback :state="validationrepw">좋아요!</b-form-valid-feedback>
-                            </b-form>
-                    </div> -->
                     <div id="pw" line-height="11.6em">
                         <div>
                             <b-form @submit.stop.prevent align="left">
@@ -89,40 +74,44 @@
                                 id="fieldset-1"
                                 label-for="input-1"
                                 valid-feedback="좋아요!"
-                                :invalid-feedback="invalidFeedback2"
+                                :invalid-feedback="invalidFeedbackPW"
                                 :state="state"
                             >
-                            <b-form-input id="input-1" v-model="userPw" :state="state" trim></b-form-input>
+                            <b-row v-for="type in types" :key="type">
+                                <b-col sm="12">
+                                    <b-form-input id="input-1" :type="type" v-model="userPw" :state="state" trim></b-form-input>
+                                </b-col>
+                            </b-row> 
                             </b-form-group>
                         </div>
-                        <div>
-                            <b-form @submit.stop.prevent align="left">
+                        <b-form @submit.stop.prevent align="left">
                                 <div id="clause"><label for="feedback-user">
-                                    <strong>Password</strong>를 <strong>다시 정확하게</strong> 입력해주세요
+                                    <strong>Password를 다시 정확하게</strong> 입력해주세요<!-- <strong>Password</strong>를 입력해주세요 -->
                                 </label></div>
                             </b-form>
                             <b-form-group
-                                id="fieldset-1"
-                                label-for="input-1"
+                                id="fieldset-2"
+                                label-for="input-2"
                                 valid-feedback="좋아요!"
-                                :invalid-feedback="invalidFeedback"
-                                :State="state2"
+                                :invalid-feedback="invalidFeedbackRePW"
+                                :state="statrePW"
                             >
-                            <b-form-input id="input-2" v-model="userrePw" :state="state2" trim></b-form-input>
+                            <b-row  v-for="type in types" :key="type">
+                                <b-col sm="12">
+                                    <b-form-input id="input-2" :type="type" v-model="userrePw" :state="statrePW" trim></b-form-input>
+                                </b-col>
+                            </b-row> 
                             </b-form-group>
-                        </div>  
-                        
+
+                            
                     </div>
                 </div>
-                
-    <!-- <div id="clause" text-align="left" line-helight="100%"> 약관 </div> -->
         <br>
         <!-- termsofservice.vue create !!!! -->
         <div id="clause">
             <p class="text-left">
                 <b-form-checkbox
                     id="checkbox-1"
-                    v-model="status"
                     name="checkbox-1"
                     value="accepted"
                     unchecked-value="not_accepted">
@@ -133,7 +122,6 @@
             <p class="text-left">
                 <b-form-checkbox
                     id="checkbox-2"
-                    v-model="status"
                     name="checkbox-2"
                     value="accepted"
                     unchecked-value="not_accepted">
@@ -144,7 +132,6 @@
             <p class="text-left">
                 <b-form-checkbox
                     id="checkbox-3"
-                    v-model="status"
                     name="checkbox-3"
                     value="accepted"
                     unchecked-value="not_accepted">
@@ -167,12 +154,12 @@
     export default {
         data() {
             return {
+                types: ['password'],
+                typepw: ['password'],
                 userPw:'',
                 userId: '',
                 userrePw: '',
                 userNick: '',
-                // userID_pw: '',
-                // userID_repw: '',
                 selected: null,
                 options: [
                     {
@@ -220,22 +207,13 @@
             validationnick() {
                 return this.userNick.length <= 15 && this.userNick.length >=1
             },
-
-
             validationid() {
                 return this.userId.length >= 5 && this.userId.length <= 15
             },
-            // validationpw() {
-            //     return this.userID_pw.length== 1
-            //     // return this.userID_pw.length >= 5 && this.userID_pw.length <=10
-            // },
-            // validationrepw() {
-            //     return this.userID_repw == 1
-            // },
-            state2() {
+            statrePW() {
                 return this.userPw == this.userrePw 
             },
-            invalidFeedback2() {
+            invalidFeedbackPW() {
                 if (this.userrePw.length > 0) {
                   return '비밀번호는 5글자 이상으로 설정해주셔야 합니다'
                 }
@@ -244,23 +222,8 @@
             state() {
                 return this.userPw.length >= 5
             },
-            invalidFeedback() {
+            invalidFeedbackRePW() {
                 return '비밀번호를 알맞게 입력해주세요'
-                 
-                // if (this.userPw == this.userrePw) {
-                //   return '비밀번호를 정확히 입력해주세요'
-                // }
-                // // return '입력해주세요'
-                // if (this.userPw != this.userrePw) {
-                    
-                // }return 0
-                // if (this.userPw.length == 0) {
-                //     return '입력해주세요'
-                // }  
-                // if (this.userPw.length != 0) {
-                //   return '비밀번호를 정확히 입력해주세요'
-                // }
-                // return '입력해주세요'
             }
         }
     }
@@ -274,7 +237,6 @@
         padding: 20px;
         position: relative;
         top: 10px;
-        /* margin-left: 250px; margin-right: 250px; */
         margin: 24px auto;
         width: 600px;
         display: block;
@@ -286,7 +248,6 @@
         height: 48px;
         box-sizing: border-box;
         text-align: center;
-        /* font-size: 0; */
         background-color: #eff3f6;
         display: block;
         color: #292929;
