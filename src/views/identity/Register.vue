@@ -48,7 +48,7 @@
                             </b-form>
                         </div>
                     </div>
-                    <br>
+                    <!-- <br>
                     <div id="id" line-height="11.6em">
                         <div>
                             <b-form @submit.stop.prevent align="left">
@@ -61,7 +61,7 @@
                                 <b-form-valid-feedback :state="validationid">좋아요!</b-form-valid-feedback>
                             </b-form>
                         </div>
-                    </div>
+                    </div> -->
                     <br>
                     <div id="pw" line-height="11.6em">
                         <div>
@@ -230,7 +230,8 @@
 </script>
 
 <style scoped="scoped">
-    #container {
+
+#container {
         background-color: #eff3f6;
         border: 1px solid #ededed;
         border-radius: 12px;
@@ -259,4 +260,35 @@
         font-family: sans-serif;
         text-align: left;
     }
+@media (max-width: 100px){
+#container {
+        background-color: #eff3f6;
+        border: 1px solid #ededed;
+        border-radius: 12px;
+        padding: 20px;
+        position: relative;
+        top: 10px;
+        margin: 24px auto;
+        width: 600px;
+        display: block;
+    }
+    #menu {
+        margin-top: 14px;
+        padding-left: 16px;
+        width: 100%;
+        height: 48px;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: #eff3f6;
+        display: block;
+        color: #292929;
+    }
+    #clause {
+        display: block;
+        font-size: 15px;
+        letter-spacing: -0.5px;
+        font-family: sans-serif;
+        text-align: left;
+    }
+}
 </style>
