@@ -1,7 +1,7 @@
 <template>
     <div id="container">
         <div id="menu">
-            <!-- logo !! -->
+            <!-- logo insert please!! -->
             <router-link to="/home/">Home</router-link>
         </div>
         <div class="school">
